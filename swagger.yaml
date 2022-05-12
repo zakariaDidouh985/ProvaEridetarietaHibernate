@@ -1,0 +1,89 @@
+openapi: "3.0.2"
+info:
+  title: API Title
+  version: "1.0"
+paths:
+
+  /listautenti:
+    get:
+      summary: lista degli utenti
+      operationId: tuttiGliUtenti
+      responses:
+        '200':
+          description: restituisce la lista di tutti gli utenti
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/UtenteDto'
+
+  /fornitore:
+    get:
+      summary: visualizza fornitore
+      operationId: VisualizzaFornitore
+      parameters:
+        - in: query
+          name: email
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: fornitore visualizzato
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/FornitoreDto'
+
+  /utente:
+    get:
+      summary: Utente
+      operationId: getUtente
+      parameters:
+        - in: query
+          name: email
+          required: true
+          schema:
+            type: string
+      responses:
+        200:
+          description: Utente OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/UtenteDto'
+
+components:
+  schemas:
+
+    UtenteDto:
+      type: object
+      properties:
+        id:
+          type: long
+        nome:
+          type: string
+        cognome:
+          type: string
+        email:
+          type: string
+
+    FornitoreDto:
+      type: object
+      properties:
+        id:
+          type: long
+        nome:
+          type: string
+        cognome:
+          type: string
+        email:
+          type: string
+        partitaIva:
+          type: string
+        indirizzo:
+          type: string
+
+
+
