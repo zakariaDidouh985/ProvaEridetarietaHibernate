@@ -9,7 +9,7 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>it.dstech</groupId>
-	<artifactId>portalefornitori</artifactId>
+	<artifactId>provaEriditarieta</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>portalefornitori</name>
 	<description>Progetto dstech portale fornitori</description>

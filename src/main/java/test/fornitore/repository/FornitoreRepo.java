@@ -7,4 +7,6 @@ public interface FornitoreRepo extends JpaRepository<Fornitore, Long> {
 
 
     Fornitore findByEmail(String email);
+
+    boolean existsByEmail(String email);
 }

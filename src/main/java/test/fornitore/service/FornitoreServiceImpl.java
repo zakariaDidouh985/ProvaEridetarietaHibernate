@@ -26,7 +26,10 @@ public class FornitoreServiceImpl implements FornitoreApiDelegate {
 
     @Override
     public ResponseEntity<FornitoreDto> visualizzaFornitore(String email) {
-        return ResponseEntity.ok().body(fornitoreMapper.fornitoreModelToDto(fornitoreRepo.findByEmail(email)));
+        if (fornitoreRepo.existsByEmail(email)){
+            return ResponseEntity.ok().body(fornitoreMapper.fornitoreModelToDto(fornitoreRepo.findByEmail(email)));
+        }
+        return ResponseEntity.badRequest().build();
     }
 
 

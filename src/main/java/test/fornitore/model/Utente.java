@@ -6,7 +6,6 @@ import lombok.NoArgsConstructor;
 import lombok.experimental.SuperBuilder;
 
 import javax.persistence.*;
-import javax.validation.constraints.NotNull;
 import java.io.Serializable;
 
 @Entity
@@ -24,7 +23,6 @@ public class Utente implements Serializable {
     private Long id;
     private String nome;
     private String cognome;
-    @NotNull
     private String email;
 
 
