@@ -1,5 +1,6 @@
 package test.fornitore.repository;
 
+
 import org.springframework.data.jpa.repository.JpaRepository;
 import test.fornitore.model.Fornitore;
 

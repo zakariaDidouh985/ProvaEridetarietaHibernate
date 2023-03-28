@@ -1,5 +1,6 @@
 package test.fornitore.service;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import test.fornitore.model.FornitoreDto;
 import test.fornitore.repository.FornitoreRepo;
 import test.fornitore.rest.FornitoreApiDelegate;
@@ -18,10 +19,10 @@ import javax.transaction.Transactional;
 @Transactional
 @Slf4j
 public class FornitoreServiceImpl implements FornitoreApiDelegate {
-
-    private final FornitoreMapper fornitoreMapper;
-    private final UtenteRepo utenteRepo;
-    private final FornitoreRepo fornitoreRepo;
+    @Autowired
+    FornitoreMapper fornitoreMapper;
+    @Autowired
+    FornitoreRepo fornitoreRepo;
 
 
     @Override

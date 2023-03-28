@@ -16,7 +16,6 @@ import java.util.List;
 public class UtenteConfig {
 
     @Bean(name = "utenteConfiguration")
-
     public CommandLineRunner commandLineRunner(UtenteRepo utenteRepo, FornitoreRepo fornitoreRepo){
         return args -> {
             if(utenteRepo.findAll().isEmpty()){
@@ -25,8 +24,9 @@ public class UtenteConfig {
                 Fornitore utenteFornitore = Fornitore.builder().email("fornitore@dst.it").nome("Mario").cognome("Pontillo").indirizzo("SFVS").partitaIva("SDFDS").build();
                 Fornitore utenteFornitore2 = Fornitore.builder().email("fouore@dst.it").nome("Mario").cognome("Pontillo").indirizzo("SFVS").partitaIva("SDFDS").build();
                 Fornitore utenteFornitore3 = Fornitore.builder().indirizzo("SFVS").partitaIva("SDFDS").build();
-                utenteRepo.saveAll(List.of(utenteAdmin, utenteTeamLeader, utenteFornitore ));
-                fornitoreRepo.saveAll(List.of(utenteFornitore2, utenteFornitore3));
+                utenteRepo.saveAll(List.of(utenteAdmin, utenteTeamLeader ));
+                fornitoreRepo.saveAll(List.of(utenteFornitore2, utenteFornitore, utenteFornitore3));
+
             }
         };
     }
